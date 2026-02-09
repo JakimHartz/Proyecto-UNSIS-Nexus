@@ -1,0 +1,331 @@
+/* =====================================================
+   UNSIS NEXUS - LAYOUTS
+   ===================================================== */
+
+/* =====================================================
+   1. GRIDS GENERALES
+   ===================================================== */
+
+/* Grid de Noticias (Index) */
+.grid-noticias {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-xl);
+    padding: var(--espaciado-xl) 0;
+}
+
+/* Grid de Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-lg);
+}
+
+/* Cards Container para páginas internas */
+.cards-container {
+    max-width: var(--max-width-xl);
+    margin: 0 auto;
+    padding: var(--espaciado-2xl) var(--espaciado-md);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-2xl);
+}
+
+/* =====================================================
+   2. GRIDS ESPECÍFICOS
+   ===================================================== */
+
+/* Clubs */
+.clubs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-md);
+}
+
+/* Cultura */
+.culture-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-lg);
+}
+
+/* Deportes */
+.sports-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-lg);
+}
+
+/* Libros */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espaciado-md);
+}
+
+/* Institutos */
+.institutes-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-lg);
+}
+
+/* Especiales */
+.specials-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-lg);
+}
+
+/* =====================================================
+   3. NOTICIA PRINCIPAL (DESTACADA)
+   ===================================================== */
+.noticia-principal {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg-primario);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-card);
+    margin: var(--espaciado-2xl) auto;
+    overflow: hidden;
+    max-width: 90%;
+}
+
+.noticia-principal .noticia-img-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.noticia-principal img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.noticia-principal .noticia-texto {
+    padding: var(--espaciado-xl);
+    width: 100%;
+}
+
+.noticia-principal h3 {
+    margin-top: 0;
+    font-size: var(--texto-2xl);
+    color: var(--color-primario);
+}
+
+/* Noticia Card (para grid) */
+.noticia-card {
+    background: var(--color-bg-primario);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-sm);
+    padding: var(--espaciado-lg);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    border: 1px solid #eee;
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.noticia-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--espaciado-md);
+}
+
+.noticia-card h3 {
+    font-size: var(--texto-lg);
+    margin-top: 0;
+    margin-bottom: var(--espaciado-sm);
+    color: var(--color-primario-dark);
+}
+
+.noticia-card p {
+    flex-grow: 1;
+    font-size: var(--texto-sm);
+    margin-bottom: var(--espaciado-md);
+    color: var(--color-texto-secundario);
+}
+
+/* =====================================================
+   4. CONTENEDOR PRINCIPAL
+   ===================================================== */
+.contenido-principal {
+    min-height: 60vh;
+}
+
+.main-container {
+    min-height: 60vh;
+}
+
+/* =====================================================
+   5. RESPONSIVE - TABLET (768px+)
+   ===================================================== */
+@media (min-width: 768px) {
+    /* Header */
+    .header__container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header__top {
+        margin-bottom: 0;
+    }
+
+    .header__menu-btn {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+    }
+
+    .nav__list {
+        flex-direction: row;
+        gap: var(--espaciado-xs);
+    }
+
+    .nav__submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        padding-left: 0;
+        border-radius: var(--border-radius-sm);
+        box-shadow: var(--shadow-lg);
+        z-index: 100;
+    }
+
+    /* Hero */
+    .hero {
+        height: 400px;
+    }
+
+    .hero__title {
+        font-size: var(--texto-4xl);
+    }
+
+    /* Grids */
+    .grid-noticias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .clubs-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .culture-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sports-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .institutes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .specials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Noticia Principal - Layout Horizontal */
+    .noticia-principal {
+        flex-direction: row;
+        max-width: 95%;
+    }
+
+    .noticia-principal .noticia-img-container {
+        width: 50%;
+    }
+
+    .noticia-principal img {
+        height: 100%;
+    }
+
+    .noticia-principal .noticia-texto {
+        width: 50%;
+    }
+}
+
+/* =====================================================
+   6. RESPONSIVE - DESKTOP (1024px+)
+   ===================================================== */
+@media (min-width: 1024px) {
+    /* Grids - 3 columnas */
+    .grid-noticias {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .culture-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .sports-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .specials-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Institutos - Layout especial */
+    .institute-card {
+        flex-direction: row;
+    }
+
+    .institute-card__image {
+        width: 200px;
+        height: auto;
+    }
+}
+
+/* =====================================================
+   7. RESPONSIVE - WIDE DESKTOP (1400px+)
+   ===================================================== */
+@media (min-width: 1400px) {
+    .grid-noticias {
+        gap: var(--espaciado-2xl);
+    }
+
+    .cards-container {
+        gap: var(--espaciado-3xl);
+    }
+}

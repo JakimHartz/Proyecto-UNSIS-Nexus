@@ -1,0 +1,230 @@
+/* =====================================================
+   UNSIS NEXUS - GACETA UNIVERSITARIA
+   GLOBAL STYLES
+   ===================================================== */
+
+/* =====================================================
+   1. VARIABLES CSS
+   ===================================================== */
+:root {
+    /* Colores Institucionales UNSIS */
+    --color-primario: #670300;
+    --color-primario-light: #8b1a17;
+    --color-primario-dark: #6e0a0a;
+    --color-primario-lighter: #f5e6e6;
+    
+    /* Colores de Acento */
+    --color-acento: #c9a227;
+    --color-acento-light: #e8d48a;
+    --color-hover-crema: #f3e6d8;
+    
+    /* Colores de Fondo */
+    --color-bg-primario: #ffffff;
+    --color-bg-secundario: #f8f9fa;
+    --color-bg-claro: #f4f4f4;
+    
+    /* Colores de Texto */
+    --color-texto-primario: #212529;
+    --color-texto-secundario: #6c757d;
+    --color-texto-claro: #ffffff;
+    --color-texto-oscuro: #333;
+    
+    /* Colores Auxiliares */
+    --color-border: #dee2e6;
+    
+    /* Tipografía */
+    --fuente-principal: 'Montserrat', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --fuente-titulo: 'Georgia', 'Times New Roman', serif;
+    
+    /* Tamaños de Fuente */
+    --texto-xs: 0.75rem;      /* 12px */
+    --texto-sm: 0.875rem;     /* 14px */
+    --texto-base: 1rem;       /* 16px */
+    --texto-lg: 1.125rem;     /* 18px */
+    --texto-xl: 1.25rem;      /* 20px */
+    --texto-2xl: 1.5rem;      /* 24px */
+    --texto-3xl: 1.875rem;    /* 30px */
+    --texto-4xl: 2.25rem;     /* 36px */
+    
+    /* Espaciado */
+    --espaciado-xs: 0.25rem;  /* 4px */
+    --espaciado-sm: 0.5rem;   /* 8px */
+    --espaciado-md: 1rem;     /* 16px */
+    --espaciado-lg: 1.5rem;   /* 24px */
+    --espaciado-xl: 2rem;     /* 32px */
+    --espaciado-2xl: 3rem;    /* 48px */
+    --espaciado-3xl: 4rem;    /* 64px */
+    
+    /* Bordes */
+    --border-radius-sm: 0.25rem;  /* 4px */
+    --border-radius-md: 0.5rem;   /* 8px */
+    --border-radius-lg: 0.75rem;  /* 12px */
+    --border-radius-xl: 1rem;     /* 16px */
+    
+    /* Sombras */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.1);
+    
+    /* Transiciones */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+    
+    /* Anchos Máximos */
+    --max-width-sm: 640px;
+    --max-width-md: 768px;
+    --max-width-lg: 1024px;
+    --max-width-xl: 1200px;
+    --max-width-2xl: 1400px;
+}
+
+/* =====================================================
+   2. RESET Y ESTILOS BASE
+   ===================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    font-size: var(--texto-base);
+    line-height: 1.6;
+    color: var(--color-texto-primario);
+    background-color: var(--color-bg-primario);
+    min-height: 100vh;
+}
+
+/* =====================================================
+   3. TIPOGRAFÍA
+   ===================================================== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-titulo);
+    line-height: 1.3;
+    color: var(--color-texto-primario);
+    font-weight: 700;
+    margin-bottom: var(--espaciado-md);
+}
+
+h1 { font-size: var(--texto-4xl); }
+h2 { font-size: var(--texto-3xl); }
+h3 { font-size: var(--texto-2xl); }
+h4 { font-size: var(--texto-xl); }
+h5 { font-size: var(--texto-lg); }
+h6 { font-size: var(--texto-base); }
+
+p {
+    margin-bottom: var(--espaciado-md);
+}
+
+/* =====================================================
+   4. ELEMENTOS BASE
+   ===================================================== */
+a {
+    color: var(--color-primario-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primario);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* =====================================================
+   5. UTILIDADES GLOBALES
+   ===================================================== */
+.container {
+    width: 100%;
+    max-width: var(--max-width-xl);
+    margin: 0 auto;
+    padding: 0 var(--espaciado-md);
+}
+
+.container--narrow {
+    max-width: var(--max-width-lg);
+}
+
+.container--wide {
+    max-width: var(--max-width-2xl);
+}
+
+/* Secciones */
+.section {
+    padding: var(--espaciado-2xl) 0;
+}
+
+.section--alt {
+    background-color: var(--color-bg-secundario);
+}
+
+.section-title {
+    font-size: var(--texto-2xl);
+    color: var(--color-primario);
+    margin-bottom: var(--espaciado-lg);
+    padding-bottom: var(--espaciado-sm);
+    border-bottom: 3px solid var(--color-acento);
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+/* Texto */
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--color-texto-secundario);
+}
+
+/* Espaciado */
+.mb-sm { margin-bottom: var(--espaciado-sm); }
+.mb-md { margin-bottom: var(--espaciado-md); }
+.mb-lg { margin-bottom: var(--espaciado-lg); }
+.mb-xl { margin-bottom: var(--espaciado-xl); }
+
+.mt-sm { margin-top: var(--espaciado-sm); }
+.mt-md { margin-top: var(--espaciado-md); }
+.mt-lg { margin-top: var(--espaciado-lg); }
+.mt-xl { margin-top: var(--espaciado-xl); }
+
+/* =====================================================
+   6. RESPONSIVE BREAKPOINTS
+   ===================================================== */
+/* 
+   Mobile First Approach
+   - Base: < 768px (móvil)
+   - Tablet: >= 768px
+   - Desktop: >= 1024px
+*/

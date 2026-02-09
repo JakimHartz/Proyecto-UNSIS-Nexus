@@ -1,0 +1,310 @@
+/* =============================================
+   ESTILO INSTITUCIONAL TIPO UNSIS - MEJORADO
+   ============================================= */
+
+/* ----- VARIABLES CSS para una mejor gestión de colores ----- */
+:root {
+    --color-unsis-dark: #6e0a0a;
+    /* Rojo oscuro para hover/footer */
+    --color-unsis-medium: #7b0a0a;
+    /* Rojo UNSIS principal (Header) */
+    --color-unsis-light: #8c0c0c;
+    /* Rojo para menú principal y botones */
+    --color-fondo-claro: #f4f4f4;
+    --color-texto-oscuro: #333;
+    --sombra-card: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ----- GENERALES ----- */
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-fondo-claro);
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    color: var(--color-texto-oscuro);
+    line-height: 1.6;
+}
+
+h2 {
+    color: var(--color-unsis-medium);
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 2em;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: var(--color-unsis-dark);
+}
+
+/* Contenedor central para limitar el ancho del contenido */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ----- HEADER ROJO INSTITUCIONAL ----- */
+.top-bar {
+    background: var(--color-unsis-medium);
+    color: white;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.top-bar .logo {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.top-bar .redes-top {
+    display: flex;
+    gap: 15px;
+}
+
+/* ----- MENu PRINCIPAL ----- */
+.menu-principal {
+    background: var(--color-unsis-light);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.menu-principal a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+    color: #ffcc00;
+    /* Color de acento */
+    text-decoration: none;
+}
+
+/* ----- HERO (IMAGEN PRINCIPAL) ----- */
+.hero {
+    overflow: hidden;
+    max-height: 450px;
+    width: 100%;
+}
+
+.hero-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ----- REDES SECUNDARIAS (Sección simple) ----- */
+.redes-secundarias {
+    text-align: center;
+    padding: 15px;
+    background: #e0e0e0;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+/* ----- BOTÓN ROJO INSTITUCIONAL ----- */
+.btn-rojo {
+    display: inline-block;
+    background: var(--color-unsis-light);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s;
+    margin-top: 15px;
+}
+
+.btn-rojo:hover {
+    background: var(--color-unsis-dark);
+    color: #ffcc00;
+}
+
+/* -------------------------------------
+   ESTILO DE NOTICIAS (TARJETAS)
+   ------------------------------------- */
+
+/* Noticia Destacada: Diseño horizontal en escritorio */
+.noticia-principal {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--sombra-card);
+    margin: 40px auto;
+    overflow: hidden;
+    max-width: 90%;
+}
+
+.noticia-principal .noticia-img-container {
+    width: 50%;
+    overflow: hidden;
+}
+
+.noticia-principal img {
+    width: 100%;
+    height: 100%;
+    /* Ajuste a la altura del contenedor */
+    object-fit: cover;
+    display: block;
+}
+
+.noticia-principal .noticia-texto {
+    padding: 30px;
+    width: 50%;
+}
+
+.noticia-principal h3 {
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+/* Contenedor de las tarjetas de noticias secundarias (Uso de Grid) */
+.grid-noticias {
+    display: grid;
+    /* Ajusta automáticamente las columnas, mínimo 300px, para 2 o 3 columnas */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 30px 0;
+}
+
+/* Tarjeta de Noticia Estándar */
+.noticia-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #eee;
+}
+
+.noticia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.noticia-card img {
+    width: 100%;
+    height: 200px;
+    /* Altura fija para uniformidad visual en la cuadrícula */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.noticia-card h3 {
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.noticia-card p {
+    flex-grow: 1;
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+/* -------------------------------------
+   FOOTER (Pie de Página)
+   ------------------------------------- */
+
+.footer-principal {
+    background: var(--color-unsis-dark);
+    color: white;
+    padding: 40px 0;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    text-align: left;
+}
+
+.footer-principal p {
+    margin: 5px 0;
+}
+
+.footer-principal a {
+    color: #ffcc00;
+    /* Color de acento para enlaces */
+    text-decoration: none;
+}
+
+.footer-principal a:hover {
+    text-decoration: underline;
+}
+
+/* ----- RESPONSIVE (Ajustes para Tabletas y Móviles) ----- */
+
+/* Para tabletas (992px y menos) */
+@media (max-width: 992px) {
+
+    /* La noticia principal se apila verticalmente */
+    .noticia-principal {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    .noticia-principal .noticia-img-container,
+    .noticia-principal .noticia-texto {
+        width: 100%;
+    }
+
+    .noticia-principal img {
+        height: 300px;
+    }
+}
+
+
+
+/* Para móviles (768px y menos) */
+@media (max-width: 768px) {
+    .menu-principal {
+        /* El menú pasa a ser vertical */
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .top-bar {
+        /* El header pasa a ser vertical */
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .top-bar .redes-top {
+        margin-top: 10px;
+    }
+
+    .footer-content {
+        /* El footer pasa a ser vertical y centrado */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid-noticias {
+        /* La cuadrícula de noticias pasa a ser una sola columna */
+        grid-template-columns: 1fr;
+    }
+}

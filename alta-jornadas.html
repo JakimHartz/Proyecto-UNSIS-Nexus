@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de Jornadas Académicas | UNSIS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Placeholder para Header -->
+    <div id="header-forms-placeholder"></div>
+
+    <main class="container">
+
+        <h1 class="section-title">Actualizar contenido de jornadas académicas</h1>
+
+        <form action="#" method="post" aria-label="Formulario para alta de jornadas académicas">
+            <fieldset>
+                <legend>Registrar nueva jornada académica</legend>
+
+                <div>
+                    <label for="titulo">Título de la jornada</label><br>
+                    <input type="text" id="titulo" name="titulo"
+                        placeholder="Ejemplo: 5.ª Jornada Académica de Informática" required>
+                </div>
+
+                <div>
+                    <label for="descripcion">Descripción</label><br>
+                    <textarea id="descripcion" name="descripcion" rows="4"
+                        placeholder="Describe brevemente la jornada académica" required></textarea>
+                </div>
+
+                <div>
+                    <label for="fecha">Fecha</label><br>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <div>
+                    <label for="lugar">Lugar</label><br>
+                    <input type="text" id="lugar" name="lugar" placeholder="Ejemplo: Paraninfo UNSIS" required>
+                </div>
+
+                <div>
+                    <label for="imagen">Imagen representativa</label><br>
+                    <input type="file" id="imagen" name="imagen" accept="image/*">
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <button type="submit">Guardar jornada</button>
+                </div>
+            </fieldset>
+        </form>
+
+    </main>
+
+    <!-- Placeholder para Footer -->
+    <div id="footer-forms-placeholder"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
