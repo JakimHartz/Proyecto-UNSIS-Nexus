@@ -1,4 +1,4 @@
-# Proyecto-Unsito
+# Proyecto UNSIS Nexus
 
 ## Integrantes de equipo:
 * Lopez Ruiz Guadalupe Victoria
