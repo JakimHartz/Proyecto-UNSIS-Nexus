@@ -81,90 +81,90 @@ function verificarCredenciales() {
     }
 }
 
-// // =====================================================
-// // 8. GUARDAR NOTICIA
-// // =====================================================
-// function guardarNoticia(event) {
-//     event.preventDefault();
+// =====================================================
+// 8. GUARDAR NOTICIA
+// =====================================================
+function guardarNoticia(event) {
+    event.preventDefault();
 
-//     const titulo = document.getElementById('titulo').value;
-//     const descripcion = document.getElementById('descripcion').value;
-//     const fecha = document.getElementById('fecha').value;
-//     const enlace = document.getElementById('enlace').value || '#';
-//     const imagenInput = document.getElementById('imagen');
+    const titulo = document.getElementById('titulo').value;
+    const descripcion = document.getElementById('descripcion').value;
+    const fecha = document.getElementById('fecha').value;
+    const enlace = document.getElementById('enlace').value || '#';
+    const imagenInput = document.getElementById('imagen');
 
-//     // Crear objeto de noticia
-//     const noticia = {
-//         id: Date.now(), // ID único basado en timestamp
-//         titulo: titulo,
-//         descripcion: descripcion,
-//         fecha: fecha,
-//         enlace: enlace,
-//         imagen: '' // Se llenará después si hay imagen
-//     };
+    // Crear objeto de noticia
+    const noticia = {
+        id: Date.now(), // ID único basado en timestamp
+        titulo: titulo,
+        descripcion: descripcion,
+        fecha: fecha,
+        enlace: enlace,
+        imagen: '' // Se llenará después si hay imagen
+    };
 
-//     // Leer imagen si existe
-//     if (imagenInput.files && imagenInput.files[0]) {
-//         const reader = new FileReader();
+    // Leer imagen si existe
+    if (imagenInput.files && imagenInput.files[0]) {
+        const reader = new FileReader();
         
-//         reader.onload = function(e) {
-//             noticia.imagen = e.target.result; // Guardar imagen como base64
-//             guardarEnLocalStorage(noticia);
-//         };
+        reader.onload = function(e) {
+            noticia.imagen = e.target.result; // Guardar imagen como base64
+            guardarEnLocalStorage(noticia);
+        };
         
-//         reader.readAsDataURL(imagenInput.files[0]);
-//     } else {
-//         // Si no hay imagen, usar placeholder
-//         noticia.imagen = 'images/placeholder.jpg';
-//         guardarEnLocalStorage(noticia);
-//     }
-// }
+        reader.readAsDataURL(imagenInput.files[0]);
+    } else {
+        // Si no hay imagen, usar placeholder
+        noticia.imagen = 'images/placeholder.jpg';
+        guardarEnLocalStorage(noticia);
+    }
+}
 
-// // =====================================================
-// // 9. GUARDAR EN LOCALSTORAGE
-// // =====================================================
-// function guardarEnLocalStorage(noticia) {
-//     // Obtener noticias existentes
-//     let noticias = JSON.parse(localStorage.getItem('noticias')) || [];
+// =====================================================
+// 9. GUARDAR EN LOCALSTORAGE
+// =====================================================
+function guardarEnLocalStorage(noticia) {
+    // Obtener noticias existentes
+    let noticias = JSON.parse(localStorage.getItem('noticias')) || [];
     
-//     // Agregar nueva noticia al inicio
-//     noticias.unshift(noticia);
+    // Agregar nueva noticia al inicio
+    noticias.unshift(noticia);
     
-//     // Guardar en localStorage
-//     localStorage.setItem('noticias', JSON.stringify(noticias));
+    // Guardar en localStorage
+    localStorage.setItem('noticias', JSON.stringify(noticias));
     
-//     // Mostrar mensaje de éxito
-//     mostrarMensaje('¡Noticia publicada exitosamente!', 'success');
+    // Mostrar mensaje de éxito
+    mostrarMensaje('¡Noticia publicada exitosamente!', 'success');
     
-//     // Limpiar formulario
-//     document.getElementById('form-noticia').reset();
+    // Limpiar formulario
+    document.getElementById('form-noticia').reset();
     
-//     // Opcional: redirigir al inicio después de 2 segundos
-//     setTimeout(() => {
-//         window.location.href = '../index.html';
-//     }, 2000);
-// }
+    // Opcional: redirigir al inicio después de 2 segundos
+    setTimeout(() => {
+        window.location.href = '../index.html';
+    }, 2000);
+}
 
-// // =====================================================
-// // 10. MOSTRAR MENSAJE
-// // =====================================================
-// function mostrarMensaje(texto, tipo) {
-//     const mensaje = document.getElementById('mensaje');
-//     mensaje.textContent = texto;
-//     mensaje.style.display = 'block';
+// =====================================================
+// 10. MOSTRAR MENSAJE
+// =====================================================
+function mostrarMensaje(texto, tipo) {
+    const mensaje = document.getElementById('mensaje');
+    mensaje.textContent = texto;
+    mensaje.style.display = 'block';
     
-//     if (tipo === 'success') {
-//         mensaje.style.backgroundColor = '#d4edda';
-//         mensaje.style.color = '#155724';
-//         mensaje.style.border = '1px solid #c3e6cb';
-//     } else {
-//         mensaje.style.backgroundColor = '#f8d7da';
-//         mensaje.style.color = '#721c24';
-//         mensaje.style.border = '1px solid #f5c6cb';
-//     }
+    if (tipo === 'success') {
+        mensaje.style.backgroundColor = '#d4edda';
+        mensaje.style.color = '#155724';
+        mensaje.style.border = '1px solid #c3e6cb';
+    } else {
+        mensaje.style.backgroundColor = '#f8d7da';
+        mensaje.style.color = '#721c24';
+        mensaje.style.border = '1px solid #f5c6cb';
+    }
     
-//     // Ocultar mensaje después de 5 segundos
-//     setTimeout(() => {
-//         mensaje.style.display = 'none';
-//     }, 5000);
-// }
+    // Ocultar mensaje después de 5 segundos
+    setTimeout(() => {
+        mensaje.style.display = 'none';
+    }, 5000);
+}

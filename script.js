@@ -60,51 +60,51 @@ function toggleMenu() {
     btn.setAttribute('aria-expanded', !isExpanded);
 }
 
-// // =====================================================
-// // 4. CARGAR NOTICIAS DINÁMICAS
-// // =====================================================
-// function cargarNoticias() {
-//     // Obtener noticias de localStorage
-//     let noticias = JSON.parse(localStorage.getItem('noticias')) || [];
+// =====================================================
+// 4. CARGAR NOTICIAS DINÁMICAS
+// =====================================================
+function cargarNoticias() {
+    // Obtener noticias de localStorage
+    let noticias = JSON.parse(localStorage.getItem('noticias')) || [];
     
-//     // Si no hay noticias guardadas, no hacer nada
-//     if (noticias.length === 0) {
-//         return;
-//     }
+    // Si no hay noticias guardadas, no hacer nada
+    if (noticias.length === 0) {
+        return;
+    }
     
-//     // Obtener el contenedor de noticias
-//     const gridNoticias = document.querySelector('.grid-noticias');
+    // Obtener el contenedor de noticias
+    const gridNoticias = document.querySelector('.grid-noticias');
     
-//     if (!gridNoticias) {
-//         return;
-//     }
+    if (!gridNoticias) {
+        return;
+    }
     
-//     // Limpiar noticias existentes (opcional, o agregar al inicio)
-//     // gridNoticias.innerHTML = '';
+    // Limpiar noticias existentes (opcional, o agregar al inicio)
+    // gridNoticias.innerHTML = '';
     
-//     // Crear HTML para cada noticia y agregarla al INICIO
-//     noticias.forEach(noticia => {
-//         const article = document.createElement('article');
-//         article.className = 'noticia-card';
+    // Crear HTML para cada noticia y agregarla al INICIO
+    noticias.forEach(noticia => {
+        const article = document.createElement('article');
+        article.className = 'noticia-card';
         
-//         article.innerHTML = `
-//             <img src="${noticia.imagen}" 
-//                  alt="Imagen de ${noticia.titulo}"
-//                  onerror="this.src='images/placeholder.jpg'">
-//             <h3>${noticia.titulo}</h3>
-//             <p>${noticia.descripcion}</p>
-//             <a href="${noticia.enlace}" class="btn-rojo">Ver más</a>
-//         `;
+        article.innerHTML = `
+            <img src="${noticia.imagen}" 
+                 alt="Imagen de ${noticia.titulo}"
+                 onerror="this.src='images/placeholder.jpg'">
+            <h3>${noticia.titulo}</h3>
+            <p>${noticia.descripcion}</p>
+            <a href="${noticia.enlace}" class="btn-rojo">Ver más</a>
+        `;
         
-//         // Agregar la noticia al INICIO del grid
-//         gridNoticias.insertBefore(article, gridNoticias.firstChild);
-//     });
-// }
+        // Agregar la noticia al INICIO del grid
+        gridNoticias.insertBefore(article, gridNoticias.firstChild);
+    });
+}
 
 // =====================================================
 // 5. INICIALIZACIÓN AL CARGAR EL DOM
 // =====================================================
 document.addEventListener('DOMContentLoaded', function () {
     loadComponents();
-    // cargarNoticias(); // Cargar noticias dinámicas
+    cargarNoticias(); // Cargar noticias dinámicas
 });
