@@ -7,21 +7,27 @@
 // =====================================================
 function loadComponents() {
     // Cargar Header
-    fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-            setActiveLink(); // Marcar link activo
-        })
-        .catch(error => console.error('Error al cargar header:', error));
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    if (headerPlaceholder) {
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                headerPlaceholder.innerHTML = data;
+                setActiveLink();
+            })
+            .catch(error => console.error('Error al cargar header:', error));
+    }
 
     // Cargar Footer
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(error => console.error('Error al cargar footer:', error));
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (footerPlaceholder) {
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                footerPlaceholder.innerHTML = data;
+            })
+            .catch(error => console.error('Error al cargar footer:', error));
+    }
 }
 
 // =====================================================
@@ -54,21 +60,51 @@ function toggleMenu() {
     btn.setAttribute('aria-expanded', !isExpanded);
 }
 
+// // =====================================================
+// // 4. CARGAR NOTICIAS DINÁMICAS
+// // =====================================================
+// function cargarNoticias() {
+//     // Obtener noticias de localStorage
+//     let noticias = JSON.parse(localStorage.getItem('noticias')) || [];
+    
+//     // Si no hay noticias guardadas, no hacer nada
+//     if (noticias.length === 0) {
+//         return;
+//     }
+    
+//     // Obtener el contenedor de noticias
+//     const gridNoticias = document.querySelector('.grid-noticias');
+    
+//     if (!gridNoticias) {
+//         return;
+//     }
+    
+//     // Limpiar noticias existentes (opcional, o agregar al inicio)
+//     // gridNoticias.innerHTML = '';
+    
+//     // Crear HTML para cada noticia y agregarla al INICIO
+//     noticias.forEach(noticia => {
+//         const article = document.createElement('article');
+//         article.className = 'noticia-card';
+        
+//         article.innerHTML = `
+//             <img src="${noticia.imagen}" 
+//                  alt="Imagen de ${noticia.titulo}"
+//                  onerror="this.src='images/placeholder.jpg'">
+//             <h3>${noticia.titulo}</h3>
+//             <p>${noticia.descripcion}</p>
+//             <a href="${noticia.enlace}" class="btn-rojo">Ver más</a>
+//         `;
+        
+//         // Agregar la noticia al INICIO del grid
+//         gridNoticias.insertBefore(article, gridNoticias.firstChild);
+//     });
+// }
+
 // =====================================================
-// 4. INICIALIZACIÓN AL CARGAR EL DOM
+// 5. INICIALIZACIÓN AL CARGAR EL DOM
 // =====================================================
 document.addEventListener('DOMContentLoaded', function () {
     loadComponents();
+    // cargarNoticias(); // Cargar noticias dinámicas
 });
-
-// function verificarCredenciales() {
-//     let usuario = document.getElementById("usuario").value;
-//     let contrasenya = document.getElementById("password").value;
-//     if (usuario === "admin" && contrasenya === "123") {
-//         alert("Acceso concedido.");
-//         console.log("Acceso concedido.");
-//     } else {
-//         alert("Acceso denegado.");
-//         console.log("Acceso denegado.");
-//     }
-// }

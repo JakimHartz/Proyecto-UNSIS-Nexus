@@ -9,43 +9,45 @@
 * Usuario: admin
 * Contraseña: 123
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 unsis-nexus/
 │
 ├── css/
-│   ├── global.css          # Variables, reset, tipografía y utilidades
-│   ├── components.css      # Header, footer, cards, botones
-│   ├── layouts.css         # Grids, contenedores y responsive
-│   └── styles.css          # Estilos para los formularios
+│   ├── global.css              # Variables, reset, tipografía y utilidades
+│   ├── components.css          # Header, footer, cards, botones
+│   ├── layouts.css             # Grids, contenedores y responsive
+│   └── styles.css              # Estilos para los formularios
 │
 ├── forms/
-│   ├── login.html          # Página de inicio de sesión
-│   ├── admin-inicio.html   # Panel de administración
-│   ├── alta-noticias       # Formulario para actualizar sección de noticias
-│   ├── alta-investigaciones # Formulario para actualizar sección de investigaciones
-│   ├── alta-jornadas       # Formulario para actualizar sección de jornadas académicas
-│   ├── alta-especiales     # Formulario para actualizar sección de eventos especiales
+│   ├── login.html              # Página de inicio de sesión
+│   ├── admin-inicio.html       # Panel de administración
+│   ├── alta-noticias           # Formulario para actualizar sección de noticias
+│   ├── alta-investigaciones    # Formulario para actualizar sección de investigaciones
+│   ├── alta-jornadas           # Formulario para actualizar sección de jornadas académicas
+│   ├── alta-especiales         # Formulario para actualizar sección de eventos especiales
 │   ├── alta-formacion-integral # Formulario para actualizar sección de formación integral
 │   │
-│   ├── header.html         # Componente de header para formularios (cargado dinámicamente)
-│   ├── footer.html         # Componente de footer para formularios (cargado dinámicamente)
+│   ├── header.html             # Componente de header para formularios (cargado dinámicamente)
+│   ├── footer.html             # Componente de footer para formularios (cargado dinámicamente)
 │   │
-│   └── script_forms.js     # JavaScript para los formularios
+│   └── script_forms.js         # JavaScript para los formularios
 │
-├── images/                 # Imágenes del proyecto
+├── images/                     # Imágenes del proyecto
 │
-├── news/                   # Páginas de noticias individuales
+├── news/                       # Páginas de noticias individuales
 │
-├── index.html              # Página principal
-├── investigaciones.html    # Página de investigaciones
-├── jornadas-academicas.html # Página de jornadas académicas
-├── especiales.html         # Página de eventos especiales
-├── formacion-integral.html # Página de formación integral
+├── index.html                  # Página principal
+├── investigaciones.html        # Página de investigaciones
+├── jornadas-academicas.html    # Página de jornadas académicas
+├── especiales.html             # Página de eventos especiales
+├── formacion-integral.html     # Página de formación integral
 │
-├── header.html             # Componente de header (cargado dinámicamente)
-├── footer.html             # Componente de footer (cargado dinámicamente)
+├── header.html                 # Componente de header (cargado dinámicamente)
+├── footer.html                 # Componente de footer (cargado dinámicamente)
 │
-└── script.js               # JavaScript principal
+└── script.js                   # JavaScript principal
+
+Nota: La partes del código relacionadas a la actualización de las páginas en JavaScript (script_forms.js) están comentadas debido a que no se logró completar la funcionalidad de actualización de noticias y páginas desde los formularios.
 ```

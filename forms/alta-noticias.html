@@ -17,25 +17,30 @@
 
         <h1 class="section-title">Actualizar noticias</h1>
 
-        <form>
+        <form id="form-noticia" onsubmit="guardarNoticia(event)">
             <fieldset>
                 <legend>Alta de noticia</legend>
 
                 <label>Título</label>
-                <input type="text" placeholder="Título de la noticia" required>
+                <input type="text" id="titulo" placeholder="Título de la noticia" required>
 
                 <label>Descripción</label>
-                <textarea rows="6" placeholder="Resumen de la noticia" required></textarea>
+                <textarea rows="6" id="descripcion" placeholder="Resumen de la noticia" required></textarea>
 
                 <label>Fecha</label>
-                <input type="date" required>
+                <input type="date" id="fecha" required>
 
                 <label>Imagen</label>
-                <input type="file" accept="image/*">
+                <input type="file" id="imagen" accept="image/*">
+
+                <label>Enlace (opcional)</label>
+                <input type="text" id="enlace" placeholder="URL de la noticia completa (ej: news/mi-noticia.html)">
 
                 <button type="submit">Publicar noticia</button>
             </fieldset>
         </form>
+
+        <div id="mensaje" style="margin-top: 20px; padding: 15px; display: none; border-radius: 5px;"></div>
 
     </main>
 
