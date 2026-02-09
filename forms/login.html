@@ -31,7 +31,8 @@
             <div class="login-container">
                 <h1 class="section-title">Inicio de sesión</h1>
 
-                <form action="admin-inicio.html" method="get" aria-label="Formulario de inicio de sesión">
+                <!-- <form action="admin-inicio.html" method="get" aria-label="Formulario de inicio de sesión"></form> -->
+                <form aria-label="Formulario de inicio de sesión">
                     <fieldset>
                         <legend>Acceso administrativo</legend>
 
@@ -41,7 +42,7 @@
                         <label for="password">Contraseña</label>
                         <input type="password" id="password" placeholder="Escribe tu contraseña" required>
 
-                        <button type="submit">Ingresar</button>
+                        <button type="button" onclick="verificarCredenciales()">Ingresar</button>
                     </fieldset>
                 </form>
             </div>
@@ -54,6 +55,8 @@
             2026 – Hecho en México, Universidad de la Sierra Sur (UNSIS).
         </div>
     </footer>
+
+    <script src="script_forms.js"></script>
 
 </body>
 

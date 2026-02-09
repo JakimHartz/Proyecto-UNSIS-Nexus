@@ -23,20 +23,20 @@ function loadComponents() {
         })
         .catch(error => console.error('Error al cargar footer:', error));
 
-    // Cargar Header de formularios
-    fetch('header_forms.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-forms-placeholder').innerHTML = data;
-            setActiveLink(); // Marcar link activo
-        });
+    // // Cargar Header de formularios
+    // fetch('header_forms.html')
+    //     .then(response => response.text())
+    //     .then(data => {
+    //         document.getElementById('header-forms-placeholder').innerHTML = data;
+    //         setActiveLink(); // Marcar link activo
+    //     });
 
-    // Cargar Footer de formularios
-    fetch('footer_forms.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-forms-placeholder').innerHTML = data;
-        });
+    // // Cargar Footer de formularios
+    // fetch('footer_forms.html')
+    //     .then(response => response.text())
+    //     .then(data => {
+    //         document.getElementById('footer-forms-placeholder').innerHTML = data;
+    //     });
 }
 
 // =====================================================
@@ -162,3 +162,15 @@ document.addEventListener('DOMContentLoaded', function () {
 //         }
 //     }, 250);
 // });
+
+function verificarCredenciales() {
+    let usuario = document.getElementById("usuario").value;
+    let contrasenya = document.getElementById("password").value;
+    if (usuario === "admin" && contrasenya === "123") {
+        alert("Acceso concedido.");
+        console.log("Acceso concedido.");
+    } else {
+        alert("Acceso denegado.");
+        console.log("Acceso denegado.");
+    }
+}
