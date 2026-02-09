@@ -49,5 +49,7 @@ unsis-nexus/
 │
 └── script.js                   # JavaScript principal
 
-Nota: La partes del código relacionadas a la actualización de las páginas en JavaScript (script_forms.js) están comentadas debido a que no se logró completar la funcionalidad de actualización de noticias y páginas desde los formularios.
+Nota: La partes del código relacionadas a la actualización de las páginas en JavaScript 
+(script_forms.js) están comentadas debido a que no se logró completar la funcionalidad 
+de actualización de noticias y páginas desde los formularios.
 ```
